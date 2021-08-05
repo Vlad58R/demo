@@ -12,19 +12,19 @@ public class TaskController {
     @Autowired
     TaskService taskService;
 
-    @CrossOrigin(origins = "http://localhost:8080/tasks")
     @GetMapping("/tasks")
     private List getAllTasks() {
         return taskService.getAllTasks();
     }
 
-    @GetMapping("/tasks/{id}")
-    private Task getTask(@PathVariable("id") int id){
+    @GetMapping("/tasks/{task_id}")
+    private Task getTask(@PathVariable("task_id") int id){
         return taskService.getTaskById(id);
     }
 
-    @DeleteMapping("/tasks/{id}")
-    private void deleteTask(@PathVariable("id") int id){
+
+    @DeleteMapping("/tasks/{task_id}")
+    private void deleteTask(@PathVariable("task_id") int id){
         taskService.delete(id);
     }
 
@@ -34,12 +34,12 @@ public class TaskController {
         return task.getId();
     }
 
-    @PutMapping("/ptasks/{id}")
-    private Task updTask(@PathVariable("id") int id, @RequestBody Task task) {
+    @PutMapping("/tasks/{task_id}")
+    private Task updTask(@PathVariable("task_id") int id, @RequestBody Task task) {
         taskService.getTaskById(id);
-        task.setId(task.getId());
-        task.setName(task.getName());
+        task.setTitle(task.getTitle());
         task.setWorker(task.getWorker());
+        task.setTime_spent(task.getTime_spent());
         taskService.saveOrUpdate(task);
         return taskService.getTaskById(id);
     }

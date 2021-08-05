@@ -1,31 +1,34 @@
 package com.example.demo.Task;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Task {
     @Id
     @GeneratedValue
-    private int id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "worker")
+    @JsonIgnore
+    private int task_id;
+    private String title;
     private String worker;
+    private int time_spent;
 
     public int getId() {
-        return id;
+        return task_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.task_id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getWorker() {
@@ -35,4 +38,13 @@ public class Task {
     public void setWorker(String worker) {
         this.worker = worker;
     }
+
+    public int getTime_spent() {
+        return time_spent;
+    }
+
+    public void setTime_spent(int time_spent) {
+        this.time_spent = time_spent;
+    }
 }
+

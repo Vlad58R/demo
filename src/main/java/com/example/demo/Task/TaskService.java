@@ -18,14 +18,14 @@ public class TaskService {
         return tasks;
     }
 
-    public Task getTaskById(int id) {
-        return taskRepository.findById(id).get();
+    public Task getTaskById(int task_id) {
+        return taskRepository.findById(task_id).get();
     }
 
     public void saveOrUpdate(Task task){
         taskRepository.save(task);
     }
-    public void delete(int id){
-        taskRepository.deleteById(id);
+    public void delete(int task_id){
+        taskRepository.deleteById(task_id);
     }
 }
