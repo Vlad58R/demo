@@ -1,8 +1,5 @@
-package com.example.demo.Task;
-
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
+import org.springframework.scheduling.config.Task;
 
 public interface TaskRepository extends CrudRepository<Task, Integer> {
 

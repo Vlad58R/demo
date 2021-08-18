@@ -1,5 +1,3 @@
-package com.example.demo.Task;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -15,12 +13,12 @@ public class Task {
     private String worker;
     private int time_spent;
 
-    public int getId() {
+    public int getTask_id() {
         return task_id;
     }
 
-    public void setId(int id) {
-        this.task_id = id;
+    public void setTask_id(int task_id) {
+        this.task_id = task_id;
     }
 
     public String getTitle() {
