@@ -1,7 +1,9 @@
-package com.example.demo.Task;
+package org.company.tms.controllers;
 
+
+import org.company.tms.models.Task;
+import org.company.tms.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.config.Task;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +33,7 @@ public class TaskController {
     @PostMapping("/tasks")
     private int saveTask(@RequestBody Task task){
         taskService.saveOrUpdate(task);
-        return task.getId();
+        return task.getTask_id();
     }
 
     @PutMapping("/tasks/{task_id}")

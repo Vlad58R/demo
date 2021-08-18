@@ -1,4 +1,4 @@
-package com.example.demo.Task;
+package org.company.tms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

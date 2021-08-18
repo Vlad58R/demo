@@ -1,12 +1,18 @@
+package org.company.tms.services.impl;
+
+
+import org.company.tms.models.Task;
+import org.company.tms.repositories.TaskRepository;
+import org.company.tms.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TaskService {
+public class TaskServiceImpl implements TaskService {
 
     @Autowired
     TaskRepository taskRepository;

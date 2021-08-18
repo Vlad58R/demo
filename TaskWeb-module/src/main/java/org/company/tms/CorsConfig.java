@@ -1,4 +1,4 @@
-package com.example.demo.Task;
+package org.company.tms;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
